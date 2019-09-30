@@ -45,6 +45,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 let navItems = document.querySelectorAll('header nav a');
 for(let i = 0; i <= (navItems.length-1); i ++){
   navItems[i].innerText = siteContent['nav'][`nav-item-${i+1}`];
+  navItems[i].style.color = "green";
 }
 // adding cta-text
 document.querySelector('.cta-text h1').innerText = "DOM\n Is\n Awesome";
@@ -81,3 +82,18 @@ contact.children[3].innerText = siteContent['contact']['email'];
 //adding footer
 let footer = document.querySelector('footer p');
 footer.innerText = siteContent['footer']["copyright"];
+
+
+//adding new items to navigation System
+const yeet = document.createElement('a');
+yeet.innerText = "Yeet";
+yeet.href = "#";
+yeet.style.color = "green";
+//append on the end
+document.querySelector('header nav').appendChild(yeet);
+
+const yate = document.createElement('a');
+yate.innerText = "Yate";
+yate.href = '#';
+yate.style.color = "green";
+document.querySelector('header nav').prepend(yate);
