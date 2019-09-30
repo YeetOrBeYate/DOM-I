@@ -47,7 +47,8 @@ for(let i = 0; i <= (navItems.length-1); i ++){
   navItems[i].innerText = siteContent['nav'][`nav-item-${i+1}`];
 }
 // adding cta-text
-document.querySelector('.cta-text h1').innerHTML = "DOM<br> Is<br> Awesome";//added html to get it to look good
+document.querySelector('.cta-text h1').innerText = "DOM\n Is\n Awesome";
+document.querySelector('.cta-text h1').style.color = 'coral';
 document.querySelector('.cta-text button').innerText = siteContent['cta']['button'];
 // adding cta-Image
 document.querySelector('.cta img').setAttribute('src', siteContent['cta']['img-src']);
