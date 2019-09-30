@@ -39,4 +39,61 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+// adding the links dynamically
+let navItems = document.querySelectorAll('header nav a');
+for(let i = 0; i <= (navItems.length-1); i ++){
+  navItems[i].innerText = siteContent['nav'][`nav-item-${i+1}`];
+  navItems[i].style.color = "green";
+}
+// adding cta-text
+document.querySelector('.cta-text h1').innerText = "DOM\n Is\n Awesome";
+document.querySelector('.cta-text h1').style.color = 'coral';
+document.querySelector('.cta-text button').innerText = siteContent['cta']['button'];
+// adding cta-Image
+document.querySelector('.cta img').setAttribute('src', siteContent['cta']['img-src']);
+//adding text-Content
+let textContent = document.querySelectorAll('.text-content');
+
+textContent[0].children[0].innerText = siteContent['main-content']['features-h4'];
+textContent[0].children[1].innerText = siteContent['main-content']['features-content'];
+
+textContent[1].children[0].innerText = siteContent['main-content']['about-h4'];
+textContent[1].children[1].innerText = siteContent['main-content']['about-content'];
+//adding image
+document.getElementById('middle-img').src = siteContent['main-content']['middle-img-src'];
+
+textContent[2].children[0].innerText = siteContent['main-content']['services-h4'];
+textContent[2].children[1].innerText = siteContent['main-content']['services-content'];
+
+textContent[3].children[0].innerText = siteContent['main-content']['product-h4'];
+textContent[3].children[1].innerText = siteContent['main-content']['product-content'];
+
+textContent[4].children[0].innerText = siteContent['main-content']['vision-h4'];
+textContent[4].children[1].innerText = siteContent['main-content']['vision-content'];
+
+//adding contact information
+let contact = document.querySelector('.contact');
+contact.children[0].innerText = siteContent['contact']['contact-h4'];
+contact.children[1].innerText = siteContent['contact']['address'];
+contact.children[2].innerText = siteContent['contact']['phone'];
+contact.children[3].innerText = siteContent['contact']['email'];
+//adding footer
+let footer = document.querySelector('footer p');
+footer.innerText = siteContent['footer']["copyright"];
+
+
+//adding new items to navigation System
+const yeet = document.createElement('a');
+yeet.innerText = "Yeet";
+yeet.href = "#";
+yeet.style.color = "green";
+//append on the end
+document.querySelector('header nav').appendChild(yeet);
+
+const yate = document.createElement('a');
+yate.innerText = "Yate";
+yate.href = '#';
+yate.style.color = "green";
+document.querySelector('header nav').prepend(yate);
